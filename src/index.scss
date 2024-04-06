@@ -1,0 +1,630 @@
+
+$black: #151515;
+$grey: #242424;
+$green: #4EE1A0;
+$dirtywhite: #d9d9d9;
+$red: #FF6F5B;
+
+$light: "Space Grotesk Light";
+$med: "Space Grotesk";
+$bold: "Space Grotesk Med";
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/font/SpaceGrotesk-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Space Grotesk Med';
+    src: url('/font/SpaceGrotesk-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Space Grotesk Light';
+    src: url('/font/SpaceGrotesk-VariableFont_wght.ttf');
+}
+
+*{
+    font-family: "Space Grotesk";
+}
+
+button{
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+button:hover{
+    color:$green;
+}
+
+#root{
+    display: block;
+
+    @media screen and (min-width: 1440px) {
+        display: grid;
+        justify-items: center;
+
+        background-image: url("/pattern-rings.svg"), url('pattern-rings.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-size: auto, auto;
+        background-position: left -250px top 100px, right -250px top 850px;
+    }
+}
+.top{
+    color:white;
+    display: grid;
+    place-items: center;
+    row-gap: 1rem;
+
+    @media screen and (min-width: 768px) {
+        display:block;
+        height: 600px;
+        background-image: url("/pattern-circle.svg"), url("/pattern-rings.svg"), url("/pic-tablet.png");
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-size: auto, auto, contain;
+        background-position: right -10vw bottom , right 70vw top 10vh, right center;
+    }
+
+    @media screen and (min-width: 1440px) {
+        
+        max-width: 1110px;
+        width: 100%;
+        background-image: url("/pattern-circle.svg"), url("/pic-desktop.png");
+        background-repeat: no-repeat, no-repeat;
+        background-size: auto, contain;
+        background-position: right 310px bottom, right center ;
+    }
+
+    .hero-background{
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        background-image: url("/pattern-circle.svg"), url("/pattern-rings.svg");
+        background-repeat: no-repeat, no-repeat;
+        background-position: left 80vw bottom , right 50vw top 20vh;
+
+        @media screen and (min-width: 768px) {
+            background:none;
+            width:100%;
+            display: block;
+            padding: 2rem;
+            
+        }
+    
+        .hero{
+            width: 174px;
+            height: 383px;
+            background: url('/pic-mobile.png');
+            background-size: contain;
+
+            @media screen and (min-width: 768px) {
+                width: 100%;
+                display:block;
+                background: none;
+                height: auto;
+                display:flex;
+                
+                justify-content: space-between;
+            }
+
+           
+
+
+            p{
+                padding-top: 1rem;
+                font-size: 2rem;
+                text-align: center;
+            }
+            .button-containers{
+                padding-top:1rem;
+                display: flex;
+                flex-direction: row;
+                column-gap: 1rem;
+        
+                button.socialmedias{
+                    justify-items: center;
+                    background: none;
+                    border:none;
+                }
+            }
+            
+        } 
+    }
+
+    .contactme{
+        display:grid;
+        justify-items: center;
+        align-items: center;
+        padding: 2rem 2rem 0 2rem;
+        row-gap: 2rem;
+
+        @media screen and (min-width: 768px) {
+            justify-items: start;
+            width: 70%;
+        }
+
+        @media screen and (min-width: 1440px) {
+            justify-items: start;
+            width: 100%;
+        }
+
+        h1{
+            font-size: 2.25rem;
+            line-height: 72px;
+            text-align: center;
+  
+            .name-intro{
+                display:inline;
+                @media screen and (min-width: 768px) {
+                    display: block;
+                }
+
+                @media screen and (min-width: 1440px) {
+                    display: inline;
+                }
+            }
+           
+            span.name{
+                display: inline;
+                text-align: center;
+                border-bottom: 5px solid $green;
+            }
+
+            @media screen and (min-width: 768px) {
+                display: inline-block;
+                font-size: 72px;
+                text-align: start;
+            }
+
+            @media screen and (min-width: 1440px) {
+                width: 60%;
+            }
+
+          
+        }
+
+        p{
+            color: $dirtywhite;
+            font-family: $light;
+            text-align: center;
+
+            @media screen and (min-width: 768px) {
+                text-align: start;
+                font-size: 18px;
+               
+            }
+
+            @media screen and (min-width: 1440px) {
+                width: 40%;
+            }
+        }
+
+        button{
+            text-transform: uppercase;
+            color:white;
+            background: none;
+            border: none;
+            letter-spacing: 2px;
+            padding:1rem 0 1rem 0;
+            border-bottom: 3px solid $green;
+        }
+
+        button:hover{
+            color: $green;
+        }
+    }
+    
+   
+}
+
+.skills{
+    display: grid;
+    place-items: center;
+    color:white;
+    padding: 4rem 0 4rem 0;
+    background: url('pattern-rings.svg') no-repeat left 50vw bottom;
+
+    @media screen and (min-width: 768px) {
+        background: url('pattern-rings.svg') no-repeat left 70vw bottom;
+    }
+
+    @media screen and (min-width: 1440px) {
+        background: none;
+        padding: 4rem 0 4rem 0;
+        max-width: 1110px;
+        width: 100%;
+    }
+
+
+    .skills-inner{
+        width: 80%;
+        text-align: center;
+        display: grid;
+        row-gap: 1rem;
+        padding: 2rem 1rem 2rem 1rem;
+        
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        
+        @media screen and (min-width: 768px) {
+            width: 90%;
+            grid-template-columns:  1fr 1fr;
+            grid-auto-rows: auto;
+            border-bottom: none;
+            text-align: start;
+        }
+
+        @media screen and (min-width: 1440px) {
+            width: 100%;
+            column-gap: 4rem;
+            grid-template-columns:  1fr 1fr 1fr;
+
+        }
+
+        div{
+            h2{
+                font-size: 1.75rem;
+                font-family: $med;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 48px;
+                }
+            }
+            p{
+                color: $dirtywhite;
+                font-family: $med;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.project{
+    color: white;
+    padding: 2rem;
+    display: grid;
+    row-gap: 2rem;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+
+    @media screen and (min-width: 1440px) {
+        padding: 2rem 0 2rem 0;
+        max-width: 1110px;
+        width: 100%;
+    }
+
+    .project-header{
+        display:flex;
+        justify-content: space-between;
+        align-items: end;
+
+        @media screen and (min-width: 768px) {
+            grid-column: 1/3;
+            
+        }
+
+
+        h2{
+            @media screen and (min-width: 768px) {
+                font-size: 72px;
+            }
+        }
+
+        button{
+            padding: 0 0 6px 0;
+            background: none;
+            border:none;
+            color: inherit;
+            border-bottom: 3px solid $green;
+            letter-spacing: 2px;
+            font-family: $light;
+
+            @media screen and (min-width: 768px) {
+                align-self: center;
+                font-size: 20px;
+            }
+        }
+
+        button:hover{
+            color: $green;
+        }
+        
+    }
+
+    @keyframes fade {
+        0% { opacity: 0 }
+        50% { opacity: .5 }
+        100%{opacity: 1}
+      }
+
+    .project-container:hover > .buttons{
+        display:flex;
+        
+        animation: fade .5s linear both;
+    }
+
+    .project-container:hover > img{
+        filter: brightness(50%);
+        cursor: pointer;
+    }
+    .project-container{
+        display: grid;
+        row-gap: 1rem;
+
+        img{
+            transition: filter .2s ease;
+        }
+
+      
+
+        @media screen and (min-width: 1440px) {
+            position: relative;
+        } 
+
+        h3{
+            font-size: 1.35rem;
+        }
+        .skills-used{
+            color: $dirtywhite;
+            display: flex;
+            column-gap: 1rem;
+        }
+
+        .buttons{
+            display: flex;
+            column-gap: 1rem;
+            row-gap: 1rem;
+            
+
+            .view{
+                padding:0 0 6px 0;
+                letter-spacing: 2px;
+                color:white;
+                background:none;
+                border:none;
+                border-bottom: 3px solid $green;
+                text-decoration: none;
+
+                @media screen and (min-width: 1440px) {
+                    width: max-content;
+                }
+            }
+
+            .view:hover{
+                color: $green;
+            }
+
+            @media screen and (min-width: 1440px) {
+                position: absolute;
+                flex-direction: column;
+                justify-self: center;
+                align-items: center;
+                margin-top:30%;
+                display: none;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.footer{
+    background-color: $grey;
+    background-image: url('pattern-rings.svg');
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: right 50vw center;
+    color:white;
+    padding: 3rem;
+    display:grid;
+    row-gap: 2rem;
+
+
+    @media screen and (min-width: 768px) {
+        background-size: auto;
+        background-position: left -40vw bottom 20vh;
+    }
+
+    @media screen and (min-width: 1440px) {
+        padding: 3rem 0 3rem 0;
+        width: 100%;
+        grid-template-columns: 1fr 555px 555px 1fr;
+        background-position: left -250px top 60%;
+    }
+
+
+    .footer-top{
+       
+        display:grid;
+        row-gap: 1rem;
+        place-items: center;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: 445px;
+            justify-self: center;
+        }
+        @media screen and (min-width: 1440px) {
+            display:block;
+            text-align: start;
+            grid-column: 2/3;
+        }
+
+        h3{
+            font-size: 2.5rem;
+
+            @media screen and (min-width: 768px) {
+                font-size: 72px;
+            }
+        }
+
+        p{
+            color: $dirtywhite;
+            font-family: $light;
+            font-weight: 200;
+
+            @media screen and (min-width: 768px) {
+                font-size: 18px;
+            }
+
+            @media screen and (min-width: 1440px) {
+                width: 78%;
+                padding-top: 2rem;
+            }
+        }
+    }
+
+    .footer-form{
+        padding-bottom: 5rem;
+        display:grid;
+        row-gap: 1rem;
+        border-bottom: 1px solid $dirtywhite;
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: 445px;
+            justify-self: center;
+            border-bottom: none;
+        }
+
+        @media screen and (min-width:1440px) {
+            justify-self: end;
+            grid-column: 3/4;
+        }
+
+        div{
+            border-bottom: 1px solid $dirtywhite;
+            position: relative;
+            display: grid;
+            grid-template-columns: 90% 10%;
+
+            input{
+                position: relative;
+                width: 100%;
+                text-transform: uppercase;
+                outline:none;
+                color:white;
+                background-color: inherit;
+                border:none;
+                padding: 1rem;
+                
+            }
+
+            span.errorlogo{
+                border-radius: 50%;
+                border: 2px solid $red;
+                height: 32px;
+                width:32px; 
+                display: none;
+                align-self: center;
+                justify-self: center;
+                place-content: center;
+                color:$red;
+                font-size: 20px;
+            }
+
+            &.err{
+                span.errorlogo{
+                    display:inline-flex;
+                }
+            }
+        }
+
+        input.nameerr{
+            border-bottom: 1px solid $red;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:focus {
+            transition: background-color 600000s 0s, color 600000s 0s;
+        }
+        input[data-autocompleted] {
+            background-color: transparent !important;
+        }
+
+        textarea{
+            text-transform: uppercase;
+            outline:none;
+            COLOR:WHITE;
+            resize: none;
+            background-color: inherit;
+            border:none;
+            padding: 1rem;
+            border-bottom: 1px solid $dirtywhite;
+        }
+
+        label.errorforEmail{
+            font-size: .8rem;
+            margin-left:auto;
+            color:$red;
+            display: none;
+            transition: all .2s ease;
+
+            &.show{
+                display: block;
+            }
+        }
+
+
+        
+        .err{
+            border-bottom: 1px solid $red;
+        }
+
+        button{
+            justify-self: end;
+            background: none;
+            border:none;
+            border-bottom: 3px solid $green;
+            padding: .5rem 0 .5rem 0;
+            letter-spacing: 2px;
+            font-weight: 300;
+            font-family: "Space Grotesk Med";
+            color:white;
+        }
+
+        button:hover{
+            color: $green;
+        }
+    }
+
+    .footer-bottom{
+        
+        display:grid;
+        place-items: center;
+        padding: 2rem;
+
+        @media screen and (min-width: 768px) {
+            border-top: 1px solid $dirtywhite;
+            grid-template-columns: 1fr 1fr;
+            justify-items: start;
+        }
+
+        @media screen and (min-width: 1440px) {
+            grid-column: 2/4;
+        
+        }
+
+        .button-containers{
+            padding-top:1rem;
+            display: flex;
+            flex-direction: row;
+            column-gap: 1rem;
+            @media screen and (min-width: 768px) {
+                justify-self: end;
+            }
+    
+            button.socialmedias{
+                justify-items: center;
+                background: none;
+                border:none;
+            }
+        }
+    }
+
+
+}
