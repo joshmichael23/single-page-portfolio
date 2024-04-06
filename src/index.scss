@@ -146,12 +146,12 @@ button:hover{
         @media screen and (min-width: 1440px) {
             justify-items: start;
             width: 100%;
-            padding: 4rem 2rem 0 2rem;
+            padding: 5rem 2rem 0 2rem;
         }
 
         h1{
             font-family: $med;
-            font-weight: 2  00;
+            
             font-size: 2.25rem;
             line-height: 72px;
             text-align: center;
@@ -186,6 +186,7 @@ button:hover{
 
             @media screen and (min-width: 1440px) {
                 font-size:88px;
+                letter-spacing: -2.5px;
                 font-weight: inherit;
                 width: 80%;
             }
@@ -265,7 +266,7 @@ button:hover{
         }
 
         @media screen and (min-width: 1440px) {
-            padding: 6rem 1rem 2rem 1rem;
+            padding: 4rem 1rem 2rem 1rem;
             width: 100%;
             column-gap: 4rem;
             grid-template-columns:  1fr 1fr 1fr;
