@@ -56,18 +56,18 @@ function footer() {
       const message = form.current['message'].value;
 
       if (validateForm(form)) {
-        // emailjs
-        //   .sendForm('service_efzom5a', 'template_sqsx5ji', form.current, {
-        //     publicKey: 'sEJ6COwXwgoM3I87T',
-        //   })
-        //   .then(
-        //     () => {
-        //       alert('Sent!');
-        //     },
-        //     (error) => {
-        //       console.log('FAILED...', error.text);
-        //     },
-        //   );
+        emailjs
+          .sendForm('service_efzom5a', 'template_sqsx5ji', form.current, {
+            publicKey: 'sEJ6COwXwgoM3I87T',
+          })
+          .then(
+            () => {
+              alert('Sent!');
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+            },
+          );
         setMessageSent(true); 
       }
   }
