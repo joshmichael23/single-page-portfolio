@@ -1,11 +1,14 @@
 import React from 'react'
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+
+
 function footer() {
   const form = useRef();
   const [validEmail, setValidEmail] = useState(true);
   const [validMessage, setValidMessage] = useState(true);
   const [validName, setValidName] = useState(true);
+  const [messageSent, setMessageSent] = useState(false);
 
 
   function validateEmailAdd(email){
@@ -14,58 +17,59 @@ function footer() {
     );
   };
 
-  function validateName(value){
-    if(value==''){
-      setValidName(false)
-    }else{
-      setValidName(true)
-    }
-  }
+  function validateForm(form){
+    let isValid = true;
 
-  function validateEmail(value){
-    if(value==''){
-      setValidEmail(false)
-    }else if(!validateEmailAdd(value)){
-      setValidEmail(false)
+    if(!form.current["from_name"].value){
+        setValidName(false);
+        isValid = false;
     }else{
-      setValidEmail(true)
+        setValidName(true);
     }
-  }
 
-  function validateMessage(value){
-    console.log(validMessage);
-    if(value==''){
+    if(!form.current["message"].value){
       setValidMessage(false);
+      isValid = false;
     }else{
       setValidMessage(true);
     }
- 
+
+    if(!form.current["from_email"].value){
+      setValidEmail(false);
+      isValid = false;
+    }else if(!validateEmailAdd(form.current["from_email"].value)){
+      setValidEmail(false);
+      isValid = false;
+    }else{
+      setValidEmail(true);
+    }
+    
+    return isValid; 
+
   }
+  
+  function sendEmail(e){
+      e.preventDefault(); 
 
-  const sendEmail = (e) => {
-    e.preventDefault(); 
+      const name = form.current['from_name'].value;
+      const email = form.current['from_email'].value;
+      const message = form.current['message'].value;
 
-    const name = form.current['from_name'].value;
-    const email = form.current['from_email'].value;
-    const message = form.current['message'].value;
-
-    validateMessage(message);
-    validateEmail(email);
-    validateName(name);
-    if (validEmail && validMessage && validName) {
-      emailjs
-        .sendForm('service_efzom5a', 'template_sqsx5ji', form.current, {
-          publicKey: 'sEJ6COwXwgoM3I87T',
-        })
-        .then(
-          () => {
-            alert('Sent!');
-          },
-          (error) => {
-            console.log('FAILED...', error.text);
-          },
-        );
-    } 
+      if (validateForm(form)) {
+        // emailjs
+        //   .sendForm('service_efzom5a', 'template_sqsx5ji', form.current, {
+        //     publicKey: 'sEJ6COwXwgoM3I87T',
+        //   })
+        //   .then(
+        //     () => {
+        //       alert('Sent!');
+        //     },
+        //     (error) => {
+        //       console.log('FAILED...', error.text);
+        //     },
+        //   );
+        setMessageSent(true); 
+      }
   }
 
 
@@ -87,7 +91,8 @@ function footer() {
             </div>
             <label className={validEmail?'errorforEmail':'errorforEmail show'} htmlFor="formemail">Sorry, invalid format here</label>
             <textarea placeholder='MESSAGE' name="message" id="formmessage" className={validMessage?'':'err'} maxLength={150}></textarea>
-            <button>SEND MESSAGE</button>
+            <button disabled={messageSent?'disabled':""} className={messageSent?'disabledBtn':''}>SEND MESSAGE</button>
+            <label className={messageSent? 'messageSent show' : 'messageSent'}>MESSAGE SENT!</label>
         </form>
 
         <div className='footer-bottom'> 

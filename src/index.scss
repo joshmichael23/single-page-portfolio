@@ -590,7 +590,17 @@ button:hover{
             }
         }
 
+        .messageSent{
+            margin-left: auto;
+            display: none;
+            color: $green;
 
+            &.show{
+                display: block;                
+            }
+        }
+
+       
         
         .err{
             border-bottom: 1px solid $red;
@@ -610,6 +620,10 @@ button:hover{
 
         button:hover{
             color: $green;
+        }
+        
+        button.disabledBtn{
+            display: none;
         }
     }
 
