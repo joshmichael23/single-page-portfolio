@@ -66,13 +66,13 @@ button:hover{
     }
 
     @media screen and (min-width: 1440px) {
-        
+        height: 720px;
         max-width: 1110px;
         width: 100%;
         background-image: url("/pattern-circle.svg"), url("/pic-desktop.png");
         background-repeat: no-repeat, no-repeat;
         background-size: auto, contain;
-        background-position: right 310px bottom, right center ;
+        background-position: right 380px bottom, right center ;
     }
 
     .hero-background{
@@ -230,7 +230,7 @@ button:hover{
 
     @media screen and (min-width: 1440px) {
         background: none;
-        padding: 4rem 0 4rem 0;
+        padding: 104px 0 4rem 0;
         max-width: 1110px;
         width: 100%;
     }
