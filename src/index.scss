@@ -72,7 +72,7 @@ button:hover{
         background-image: url("/pattern-circle.svg"), url("/pic-desktop.png");
         background-repeat: no-repeat, no-repeat;
         background-size: auto, contain;
-        background-position: right 380px bottom, right center ;
+        background-position: right 380px bottom 90px, right center ;
     }
 
     .hero-background{
@@ -146,27 +146,35 @@ button:hover{
         @media screen and (min-width: 1440px) {
             justify-items: start;
             width: 100%;
+            padding: 4rem 2rem 0 2rem;
         }
 
         h1{
+            font-family: $med;
+            font-weight: 2  00;
             font-size: 2.25rem;
             line-height: 72px;
             text-align: center;
   
             .name-intro{
                 display:inline;
+                font-family: inherit;
+                font-weight: inherit;
                 @media screen and (min-width: 768px) {
                     display: block;
                 }
 
                 @media screen and (min-width: 1440px) {
                     display: inline;
+                    
                 }
             }
            
             span.name{
                 display: inline;
                 text-align: center;
+                font-family: inherit;
+                font-weight: inherit;
                 border-bottom: 5px solid $green;
             }
 
@@ -177,7 +185,9 @@ button:hover{
             }
 
             @media screen and (min-width: 1440px) {
-                width: 60%;
+                font-size:88px;
+                font-weight: inherit;
+                width: 80%;
             }
 
           
@@ -255,6 +265,7 @@ button:hover{
         }
 
         @media screen and (min-width: 1440px) {
+            padding: 6rem 1rem 2rem 1rem;
             width: 100%;
             column-gap: 4rem;
             grid-template-columns:  1fr 1fr 1fr;
