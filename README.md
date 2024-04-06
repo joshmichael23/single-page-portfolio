@@ -27,9 +27,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./phone.png)
-![](./tablet.png)
-![](./web.png)
+![](./public/phone.png)
+![](./public/tablet.png)
+![](./public/web.png)
 
 ### Links
 
