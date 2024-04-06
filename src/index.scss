@@ -313,6 +313,7 @@ button:hover{
         padding: 2rem 0 2rem 0;
         max-width: 1110px;
         width: 100%;
+        row-gap: 4rem;
     }
 
     .project-header{
@@ -329,6 +330,10 @@ button:hover{
         h2{
             @media screen and (min-width: 768px) {
                 font-size: 72px;
+            }
+
+            @media screen and (min-width: 768px) {
+                font-size: 88px;
             }
         }
 
